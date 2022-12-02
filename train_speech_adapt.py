@@ -21,9 +21,9 @@ from os.path import join as pjoin
 import numpy as np
 import torch
 import torch.nn.functional as F
-from braindecode.models.deep4 import Deep5Net
-from braindecode.torch_ext.optimizers import AdamW
-from braindecode.torch_ext.util import set_random_seeds
+from speech_braindecode.models.deep4 import Deep5Net
+from speech_braindecode.torch_ext.optimizers import AdamW
+from speech_braindecode.torch_ext.util import set_random_seeds
 from torch import nn
 
 from sklearn.utils import shuffle

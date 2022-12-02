@@ -20,16 +20,16 @@ import os
 from types import new_class
 
 import pandas as pd
-from braindecode.models.deep4 import Deep5Net
+from motor_braindecode.models.deep4 import Deep5Net
 
 import numpy as np
 import h5py
 import torch
 import torch.nn.functional as F
-from braindecode.datautil.signal_target import SignalAndTarget
+from motor_braindecode.datautil.signal_target import SignalAndTarget
 # from braindecode.models.deep4 import Deep4Net
-from braindecode.torch_ext.optimizers import AdamW
-from braindecode.torch_ext.util import set_random_seeds
+from motor_braindecode.torch_ext.optimizers import AdamW
+from motor_braindecode.torch_ext.util import set_random_seeds
 from sklearn.model_selection import KFold
 from torch import nn
 

@@ -13,9 +13,9 @@ import h5py
 import numpy as np
 import torch
 import torch.nn.functional as F
-from braindecode.models.deep4 import Deep5Net
-from braindecode.torch_ext.optimizers import AdamW
-from braindecode.torch_ext.util import set_random_seeds
+from motor_braindecode.models.deep4 import Deep5Net
+from motor_braindecode.torch_ext.optimizers import AdamW
+from motor_braindecode.torch_ext.util import set_random_seeds
 
 #python eval_base.py D:/DeepConvNet/pre-processed/KU_mi_smt.h5 D:/meta_ku_binary/results/ ./best_models/
 

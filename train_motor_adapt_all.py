@@ -20,9 +20,9 @@ from os.path import join as pjoin
 import h5py
 import torch
 import torch.nn.functional as F
-from braindecode.models.deep4 import Deep5Net
-from braindecode.torch_ext.optimizers import AdamW
-from braindecode.torch_ext.util import set_random_seeds
+from motor_braindecode.models.deep4 import Deep5Net
+from motor_braindecode.torch_ext.optimizers import AdamW
+from motor_braindecode.torch_ext.util import set_random_seeds
 from torch import nn
 
 # python train_adapt.py D:/DeepConvNet/pre-processed/KU_mi_smt.h5 D:/braindecode/results D:/braindecode/results_adapt -scheme 4 -trfrate 80

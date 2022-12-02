@@ -6,10 +6,10 @@ import warnings
 import numpy as np
 import matplotlib.pyplot as plt
 
-from braindecode.models.deep4 import Deep5Net
-from braindecode.datautil.signal_target import SignalAndTarget
-from braindecode.torch_ext.optimizers import AdamW
-from braindecode.torch_ext.util import set_random_seeds
+from speech_braindecode.models.deep4 import Deep5Net
+from speech_braindecode.datautil.signal_target import SignalAndTarget
+from speech_braindecode.torch_ext.optimizers import AdamW
+from speech_braindecode.torch_ext.util import set_random_seeds
 import torch.nn.functional as F
 import torch
 from os.path import join as pjoin
