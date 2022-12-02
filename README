@@ -1,0 +1,17 @@
+Inner Speech Dataset.
+
+Download from inner speech dataset website, put all files into the same folder
+
+Conditions = Inner Speech
+
+Classes = "Arriba/Up", "Abajo/Down", "Derecha/Right", "Izquierda/Left"
+
+Run train_LOSO.py -subj X --meta or no --meta accordinly
+
+Run train_adapt.py following trained subjcts of meta
+
+To recreate
+
+run train_adapt_all.py
+meta: on shuffle_meta, scheme 1 transfer rate 40 with meta learning
+transfer-learning: shuffle_LOSO, scheme 1 transfer rate 40 without meta learning
