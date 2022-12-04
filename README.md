@@ -5,6 +5,12 @@
 
 ### Motor Imagery
 
+| Methodology | Mean (SD) | Median | Range (Max-Min) |
+|-|-|-|-|
+| Subject-Independent | 84.44 (11.93) | 86.32 | 42.11 (100-57.89) |
+| Subject-Adaptive Deep CNN | 85.05 (11.20) | 86.32 | 40.00 (100-60.00) |
+|  |  |  |  |
+
 ### Inner Speech
 
 | Subject     | EEGNet | DeepConvNet | Transfer Learning | Meta-Learning | **Transfer Meta-Learning** |
