@@ -68,6 +68,8 @@ Optional Arguments:
     -gpu GPU                            Set gpu to use, default is 0
 ```
 
+#### Evaluate baseline models overall performance, and prepare baseline models for adaptation
+
 Obtaining baseline models for subsequent adaptation, run `eval_motor_base.py`:
 ```
 usage: python eval_motor_base.py [DATAPATH] [MODELPATH] [OUTPATH] [-gpu GPU]
@@ -82,6 +84,8 @@ Positional Arguments:
 Optional Arguments:
     -gpu GPU                            Set gpu to use, default is 0
 ```
+
+#### Subject-adaptive transfer learning
 
 To perform adaptation on the selected baseline models, run `train_motor_adapt_all.py`:
 ```
