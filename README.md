@@ -36,10 +36,9 @@ python preprocess_h5_smt.py $source $target
 ```
 #### Training the classifier
 
+Markdown Cheatsheet<a name="TOP"></a>
 ===================
-
 ### Inner Speech
-===================
 
 #### Obtain the raw dataset
 
