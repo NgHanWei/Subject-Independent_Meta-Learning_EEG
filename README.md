@@ -34,8 +34,72 @@ The following command will read the raw dataset from the `$source` folder, and o
 ```
 python preprocess_h5_smt.py $source $target
 ```
+
 #### Training the classifier
 
+Run `train_motor_LOSO.py`
+```
+usage: python train_motor_LOSO.py [--META] [DATAPATH] [OUTPATH] [-gpu GPU] [-fold FOLD]
+
+Training a subject-indepdendent meta-learning baseline model with cross validation for a single subject.
+
+Positional Arguments:
+    DATAPATH                            Path for the pre-processed EEG signals file
+    OUTPATH                             Path to folder for saving the trained model and results in
+
+Optional Arguments:
+    --meta META                         Set to enable meta-learning, default meta-learning is switched off
+    -gpu GPU                            Set gpu to use, default is 0
+    -fold FOLD                          Set the fold number to determine subject for training a binary-class motor imagery classification model
+```
+
+To obtain baseline for all subjects, run `train_motor_LOSO_all.py`:
+```
+usage: python train_motor_LOSO_all.py [--META] [DATAPATH] [OUTPATH] [-gpu GPU]
+
+Trains subject-indepdendent meta-learning baseline model with cross validation for all subjects from the KU dataset.
+
+Positional Arguments:
+    DATAPATH                            Path for the pre-processed EEG signals file
+    OUTPATH                             Path to folder for saving the trained model and results in
+
+Optional Arguments:
+    --meta META                         Set to enable meta-learning, default meta-learning is switched off
+    -gpu GPU                            Set gpu to use, default is 0
+```
+
+Obtaining baseline models for subsequent adaptation, run `eval_motor_base.py`:
+```
+usage: python eval_motor_base.py [DATAPATH] [MODELPATH] [OUTPATH] [-gpu GPU]
+
+Evaluate performance of models for each subject and selects models for subsequent transfer-learning adaptation.
+
+Positional Arguments:
+    DATAPATH                            Path for the pre-processed EEG signals file
+    MODELPATH                           Path to folder containing the baseline models
+    OUTPATH                             Path to folder for saving the selected models and results in
+
+Optional Arguments:
+    -gpu GPU                            Set gpu to use, default is 0
+```
+
+To perform adaptation on the selected baseline models, run `train_motor_adapt_all.py`:
+```
+usage: python train_motor_adapt_all.py [DATAPATH] [MODELPATH] [OUTPATH] [-scheme SCHEME] [-trfrate TRFRATE] [-lr LR] [-gpu GPU]
+
+Evaluate performance of models for each subject and selects models for subsequent transfer-learning adaptation.
+
+Positional Arguments:
+    DATAPATH                            Path for the pre-processed EEG signals file
+    MODELPATH                           Path to folder containing the selected baseline models for adaptation
+    OUTPATH                             Path to folder for saving the adaptation results in
+
+Optional Arguments:
+    -scheme SCHEME                      Set scheme which determines layers of the model to be frozen
+    -trfrate TRFRATE                    Set amount of target subject data to be used for subject-adaptive transfer learning
+    -lr LR                              Set the learning rate of the transfer learning
+    -gpu GPU                            Set gpu to use, default is 0
+```
 -----
 
 ### Inner Speech
