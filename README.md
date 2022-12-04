@@ -23,6 +23,10 @@ Original Inner Speech Github: [Link](https://github.com/N-Nieto/Inner_Speech_Dat
 
 ### Motor Imagery
 
+Conditions = Motor Imagery
+
+Classes = "Left", "Right"
+
 #### Obtain the raw dataset
 
 Download the motor imagery raw dataset from the resources above, and save them to the same `$source` folder. To conserve space, you may only download files that ends with `EEG_MI.mat`.
@@ -48,7 +52,7 @@ Positional Arguments:
     OUTPATH                             Path to folder for saving the trained model and results in
 
 Optional Arguments:
-    --meta META                         Set to enable meta-learning, default meta-learning is switched off
+    --meta                              Set to enable meta-learning, default meta-learning is switched off
     -gpu GPU                            Set gpu to use, default is 0
     -fold FOLD                          Set the fold number to determine subject for training a binary-class motor imagery classification model
 ```
@@ -64,7 +68,7 @@ Positional Arguments:
     OUTPATH                             Path to folder for saving the trained model and results in
 
 Optional Arguments:
-    --meta META                         Set to enable meta-learning, default meta-learning is switched off
+    --meta                              Set to enable meta-learning, default meta-learning is switched off
     -gpu GPU                            Set gpu to use, default is 0
 ```
 
@@ -108,26 +112,65 @@ Optional Arguments:
 
 ### Inner Speech
 
+Conditions = Inner Speech
+
+Classes = "Arriba/Up", "Abajo/Down", "Derecha/Right", "Izquierda/Left"
+
 #### Obtain the raw dataset
 
 Download the inner speech raw dataset from the resources above, save them to the save directory as the main folder.
 
 #### Training the classifier
 
-Inner Speech Dataset.
+To perform subject-independent meta-learning on chosen subject, run `train_speech_LOSO.py`. Meta learning may also be utilized.
+```
+usage: python train_speech_LOSO.py [ROOTDIR] [--META] [-subj SUBJ]
 
-Download from inner speech dataset link, put all files into the same folder
+Trains a baseline classifier for a chosen subject either using baseline backpropagation or meta-learning.
 
-Conditions = Inner Speech
+Positional Arguments:
+    ROOTDIR                             Root directory path to the folder containing the EEG data
 
-Classes = "Arriba/Up", "Abajo/Down", "Derecha/Right", "Izquierda/Left"
+Optional Arguments:
+    --meta                              Set to enable meta-learning, default meta-learning is switched off
+    -subj SUBJ                          Set subject to perform transfer learning adaptation on
+```
 
-Run train_LOSO.py -subj X --meta or no --meta accordinly
+To train classifiers for all subjects, run `train_speech_LOSO_all.py`. Contains the same arguments as `train_speech_LOSO.py` except without the subject argument. Example usage to train meta-learning for all subjects:
+```
+python train_speech_LOSO_all.py ROOTDIR --meta
+```
 
-Run train_adapt.py following trained subjcts of meta
+#### Subject-adaptive transfer learning
 
-To recreate
+To perform subject-adaptive transfer learning on chosen subject, run `train_speech_adapt.py`. Meta learning may also be utilized.
+```
+usage: python train_adapt_all.py [ROOTDIR] [MODELPATH] [OUTPATH] [--META] [-scheme SCHEME] [-trfrate TRFRATE] [-lr LR] [-gpu GPU] [-subj SUBJ]
 
-run train_adapt_all.py
-meta: on shuffle_meta, scheme 1 transfer rate 40 with meta learning
-transfer-learning: shuffle_LOSO, scheme 1 transfer rate 40 without meta learning
+Performs subject-adaptive transfer learning on a subject with or without meta-learning.
+
+Positional Arguments:
+    ROOTDIR                             Root directory path to the folder containing the EEG data
+    MODELPATH                           Path to folder containing the baseline models for adaptation
+    OUTPATH                             Path to folder for saving the adaptation results in
+
+Optional Arguments:
+    --meta                              Set to enable meta-learning, default meta-learning is switched off
+    -scheme SCHEME                      Set scheme which determines layers of the model to be frozen
+    -trfrate TRFRATE                    Set amount of target subject data to be used for subject-adaptive transfer learning
+    -lr LR                              Set the learning rate of the transfer learning
+    -gpu GPU                            Set gpu to use, default is 0
+    -subj SUBJ                          Set subject to perform transfer learning adaptation on
+```
+
+To perform subject-adaptive transfer learning on all subjects, run `train_speech_adapt_all.py`. Meta learning may also be utilized. Contains the same arguments as `train_speech_adapt.py` except without the subject argument.
+
+To recreate for meta-learning subject-adaptation, run:
+```
+python train_speech_adapt_all.py ROOTDIR MODELPATH OUTPATH --meta -scheme 1 -trfrate 40
+```
+
+For normal subject-adaptation:
+```
+python train_speech_adapt_all.py ROOTDIR MODELPATH OUTPATH -scheme 1 -trfrate 40
+```
