@@ -11,7 +11,7 @@
 
 Motor Imagery Raw Dataset: [Link](http://gigadb.org/dataset/100542)
 
-The pre-processing code of the dataset and a variation of training of the baseline models is provided by Kaishuo et al.: [Link](https://github.com/zhangks98/eeg-adapt)
+The pre-processing code of the dataset is provided by Kaishuo et al.: [Link](https://github.com/zhangks98/eeg-adapt)
 
 Inner Speech Dataset: [Link](https://openneuro.org/datasets/ds003626/versions/2.1.2)
 
