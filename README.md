@@ -36,6 +36,8 @@ python preprocess_h5_smt.py $source $target
 ```
 #### Training the classifier
 
+===================
+
 ### Inner Speech
 
 #### Obtain the raw dataset
