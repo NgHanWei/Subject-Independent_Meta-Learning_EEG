@@ -7,9 +7,10 @@
 
 | Methodology | Mean (SD) | Median | Range (Max-Min) |
 |-|-|-|-|
-| Subject-Independent | 84.44 (11.93) | 86.32 | 42.11 (100-57.89) |
-| Subject-Adaptive Deep CNN | 85.05 (11.20) | 86.32 | 40.00 (100-60.00) |
-|  |  |  |  |
+| Subject-Independent CNN| 74.15 (±15.83) | 75.00 | 60.00 (100.00-40.00) |
+| Subject-Independent Deep CNN| 84.19 (±9.98) | 84.50 | 47.50 (99.50-52.00) |
+| Subject-Adaptive Deep CNN | 86.89 (±11.41) | 88.50 | 44.00 (100.00-56.00) |
+| **Subject-Independent Meta-Learning** | 87.20 (±10.54) | 89.50 | 41.00 (100.00-59.00) |
 
 ### Inner Speech
 
