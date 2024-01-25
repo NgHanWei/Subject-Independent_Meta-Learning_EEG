@@ -1,5 +1,7 @@
 
 # Subject-Independent Meta-Learning for EEG-based Motor Imagery and Inner Speech Classification
+Code for
+### Subject-independent meta-learning framework towards optimal training of EEG-based classifiers
 
 ## Results Overview
 
@@ -194,4 +196,16 @@ python train_speech_adapt_all.py ROOTDIR MODELPATH OUTPATH --meta -scheme 1 -trf
 For normal subject-adaptation:
 ```
 python train_speech_adapt_all.py ROOTDIR MODELPATH OUTPATH -scheme 1 -trfrate 40
+```
+
+Please cite
+```
+@article{ng2024subject,
+  title={Subject-independent meta-learning framework towards optimal training of EEG-based classifiers},
+  author={Ng, Han Wei and Guan, Cuntai},
+  journal={Neural Networks},
+  pages={106108},
+  year={2024},
+  publisher={Elsevier}
+}
 ```
