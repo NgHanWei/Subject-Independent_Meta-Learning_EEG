@@ -212,7 +212,7 @@ Please cite
 
 CBCR License 1.0
 
-Copyright 2023 Centre for Brain Computing Research (CBCR)
+Copyright 2024 Centre for Brain Computing Research (CBCR)
 
 Redistribution and use for non-commercial purpose in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
