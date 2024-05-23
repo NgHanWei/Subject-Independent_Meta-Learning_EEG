@@ -96,7 +96,7 @@ for fold, subj in enumerate(subjs):
         model.fit(X_train, Y_train, 0, BATCH_SIZE)
         print(subj)
         X, Y = get_data(subj)
-        X_test, Y_test = X[300:], Y[300:]
+        X_test, Y_test = X[200:300], Y[200:300]
         test_loss = model.evaluate(X_test, Y_test)
 
         if test_loss["loss"] < best_loss:
