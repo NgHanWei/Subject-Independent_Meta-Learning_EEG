@@ -1,7 +1,7 @@
 
-# Subject-Independent Meta-Learning for EEG-based Motor Imagery and Inner Speech Classification
+# Subject-independent meta-learning framework towards optimal training of EEG-based classifiers
 Code for
-### Subject-independent meta-learning framework towards optimal training of EEG-based classifiers
+### Subject-Independent Meta-Learning for EEG-based Motor Imagery and Inner Speech Classification
 
 ## Results Overview
 
