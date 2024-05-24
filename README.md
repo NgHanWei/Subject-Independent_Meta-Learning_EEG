@@ -209,6 +209,7 @@ Please cite
   publisher={Elsevier}
 }
 ```
+Article Publication Link [Subject-independent meta-learning framework towards optimal training of EEG-based classifiers](https://www.sciencedirect.com/science/article/abs/pii/S0893608024000224)
 
 CBCR License 1.0
 
