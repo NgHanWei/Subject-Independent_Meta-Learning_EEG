@@ -1,6 +1,6 @@
 
 # Subject-independent meta-learning framework towards optimal training of EEG-based classifiers
-Code for
+Codes for the pipline, where a baseline subject-independent meta-trained model must first be obtained. The baseline model is subsequently adapted towards the unseen subject using transfer-learning to obtain an adapted model for final classification.
 ### Subject-Independent Meta-Learning for EEG-based Motor Imagery and Inner Speech Classification
 
 ## Results Overview
